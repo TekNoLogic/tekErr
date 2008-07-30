@@ -10,9 +10,7 @@ tekErrMinimapButton = nil
 
 local panel = LibStub("tekPanel-Auction").new("tekErrPanel", "tekErr")
 local f = CreateFrame("ScrollingMessageFrame", nil, panel)
-f:SetPoint("TOPLEFT", 25, -225)
 f:SetPoint("BOTTOMRIGHT", -15, 40)
-f:SetFrameStrata("DIALOG")
 f:SetMaxLines(250)
 f:SetFontObject(GameFontHighlightSmall)
 f:SetJustifyH("LEFT")
@@ -36,8 +34,7 @@ end)
 panel:SetScript("OnShow", function(self)
 	local editbox = CreateFrame("EditBox", nil, panel)
 	editbox:SetPoint("TOPLEFT", 25, -75)
-	editbox:SetPoint("RIGHT", -15, 0)
-	editbox:SetPoint("BOTTOM", f, "TOP")
+	editbox:SetPoint("BOTTOMRIGHT", panel, "TOPRIGHT", -15, -100)
 	editbox:SetFontObject(GameFontHighlightSmall)
 	editbox:SetTextInsets(8,8,8,8)
 	editbox:SetBackdrop{
@@ -46,11 +43,21 @@ panel:SetScript("OnShow", function(self)
 		edgeSize = 16,
 		insets = {left = 4, right = 4, top = 4, bottom = 4},
 	}
-	editbox:SetBackdropColor(.1,.1,.1,.3)
+	editbox:SetBackdropColor(.1,.1,.1,1)
 	editbox:SetMultiLine(true)
 	editbox:SetAutoFocus(false)
-	editbox:SetScript("OnEscapePressed", function(self) self:ClearFocus() end)
+	editbox:SetScript("OnTextSet", function(self)
+		if self:GetText() == "" then
+			editbox:SetPoint("BOTTOMRIGHT", panel, "TOPRIGHT", -15, -100)
+		else
+			editbox:SetPoint("BOTTOMRIGHT", panel, "TOPRIGHT", -15, -325)
+			editbox:SetFocus()
+		end
+	end)
+	editbox:SetScript("OnEscapePressed", editbox.ClearFocus)
+	editbox:SetScript("OnEditFocusLost", function(editbox) editbox:SetText("") end)
 
+	f:SetPoint("TOPLEFT", editbox, "BOTTOMLEFT")
 	f:EnableMouseWheel(true)
 	f:SetScript("OnHide", f.ScrollToBottom)
 	f:SetScript("OnHyperlinkClick", function(frame, link, text)
