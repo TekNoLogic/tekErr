@@ -1,16 +1,14 @@
-## Interface: 20300
+## Interface: 20400
 
 ## Title: tekErr
-## Notes: Dumps error popup dialog text to an OptionHouse frame
+## Notes: Lua error manager
 ## Author: Tekkub Stoutwrithe
 ## Version: Alpha
-## X-Website: http://code.google.com/p/tekkub-wow/
+## X-Website: http://www.tekkub.net/
 ## X-Email: tekkub-wow@googlegroups.com
-## X-Category: Chat/Communication
+## X-Category: Development Tools
 
-## OptionalDeps: OptionHouse
-
-OptionHouse.lua
+tekPanelAuction.lua
 TheLowDown.lua
 MinimapButton.lua
 tekErr.lua
