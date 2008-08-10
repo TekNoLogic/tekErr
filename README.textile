@@ -1,0 +1,9 @@
+tekErr is a simple lua error manager.  When an error is caught it will blink a small minimap icon to inform you.  Clicking the icon opens a panel listing all errors.  Clicking an error shows a full stack trace, handy to copy/paste into a bug report.
+
+You can also access the panel via an "LDB launcher":http://github.com/tekkub/libdatabroker-1-1/wikis or by typing @/err@ or @/tekerr@
+
+h2. Links
+
+<b>Visit "my site":http://www.tekkub.net/addons/tekErr for more info.<br>
+Please report all bugs and feature requests to my "Google Code":http://code.google.com/p/tekkub-wow/issues/list?can=1&q=addon:tekErr&sort=status+milestone&colspec=ID%20Type%20Status%20Addon%20Milestone%20Summary tracker<br>
+Please direct all feedback and questions to my "Google Groups":http://groups-beta.google.com/group/tekkub-wow mailinglist.</b>
