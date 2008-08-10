@@ -1,0 +1,5 @@
+2.4.3.1-Beta
+    Make the editbox resize itself
+    Add slash handler and LDB launcher
+    Redesign for wrath, no more OH
+
