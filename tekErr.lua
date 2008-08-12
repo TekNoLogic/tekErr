@@ -84,7 +84,10 @@ end)
 
 SLASH_TEKERR1 = "/err"
 SLASH_TEKERR2 = "/tekerr"
-function SlashCmdList.TEKERR() ShowUIPanel(panel) end
+function SlashCmdList.TEKERR()
+	if panel:IsShown() then HideUIPanel(panel)
+	else ShowUIPanel(panel) end
+end
 
 
 ----------------------------------------
