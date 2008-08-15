@@ -52,6 +52,7 @@ panel:SetScript("OnShow", function(self)
 		else
 			editbox:SetPoint("BOTTOMRIGHT", panel, "TOPRIGHT", -15, -325)
 			editbox:SetFocus()
+			editbox:HighlightText()
 		end
 	end)
 	editbox:SetScript("OnEscapePressed", editbox.ClearFocus)
