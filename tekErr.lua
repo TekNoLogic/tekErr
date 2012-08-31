@@ -1,4 +1,6 @@
 
+local myname, ns = ...
+
 
 local linkstr = "|cffff4040[%s] |Htekerr:%s|h%s|h|r"
 local lastName, butt
@@ -8,7 +10,7 @@ local buttfunc = tekErrMinimapButton
 tekErrMinimapButton = nil
 
 
-local panel = LibStub("tekPanel-Auction").new("tekErrPanel", "tekErr")
+local panel = ns.tekPanelAuction("tekErrPanel", "tekErr")
 local f = CreateFrame("ScrollingMessageFrame", nil, panel)
 f:SetPoint("BOTTOMRIGHT", -15, 40)
 f:SetMaxLines(250)
