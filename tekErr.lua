@@ -62,6 +62,7 @@ panel:SetScript("OnShow", function(self)
 
 	f:SetPoint("TOPLEFT", editbox, "BOTTOMLEFT")
 	f:EnableMouseWheel(true)
+	f:SetHyperlinksEnabled(true)
 	f:SetScript("OnHide", f.ScrollToBottom)
 	f:SetScript("OnHyperlinkClick", function(frame, link, text)
 		local _, _, msg = string.find(link, "tekerr:(.+)")
