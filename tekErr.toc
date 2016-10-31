@@ -1,4 +1,4 @@
-## Interface: 30000
+## Interface: 70100
 
 ## Title: tekErr
 ## Notes: Lua error manager
