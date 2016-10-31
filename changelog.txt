@@ -1,11 +1,17 @@
-3.0.1.2-Beta
-    Embed update
-    Forgot LibStub
-    Why not select the text automatically when we click an error
-    Allow closing of panel by hitting the ldb button (or /tekerr macro) again
+### 7.1.0.3-Beta
 
-2.4.3.1-Beta
-    Make the editbox resize itself
-    Add slash handler and LDB launcher
-    Redesign for wrath, no more OH
+* Seems I need to explicitly enable hyperlinks now
 
+
+### 3.0.1.2-Beta
+
+* Embed update
+* Forgot LibStub
+* Why not select the text automatically when we click an error
+* Allow closing of panel by hitting the ldb button (or /tekerr macro) again
+
+### 2.4.3.1-Beta
+
+* Make the editbox resize itself
+* Add slash handler and LDB launcher
+* Redesign for wrath, no more OH
