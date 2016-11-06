@@ -1,3 +1,8 @@
+### 7.1.0.4-Release
+
+* Tagging release version
+
+
 ### 7.1.0.3-Beta
 
 * Seems I need to explicitly enable hyperlinks now
