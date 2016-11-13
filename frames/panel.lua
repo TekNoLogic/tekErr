@@ -3,7 +3,8 @@ local myname, ns = ...
 
 
 local function OnLoad()
-	local panel = ns.CreateDoublewidePanel("tekErrPanel", "tekErr")
+	local panel = ns.CreateDoublewidePanel()
+	panel:SetTitle("tekErr")
 
 	local editbox = ns.CreateEditbox(panel)
 	editbox:SetHeight(25)

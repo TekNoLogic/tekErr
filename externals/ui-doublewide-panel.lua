@@ -5,25 +5,11 @@ local myname, ns = ...
 --[[
 Creates a frame using the Auction House textures.
 
-Make sure you use ShowUIPanel(...) to show your frame, this ensure it is
+Make sure you use ShowUIPanel(...) to show your frame, this ensures it is
 positioned by the game's engine, and closes with the ESC key.
-
-name       - A string defining the name to assign the frame in the global.
-             namespace, use nil for no name. Passed to CreateFrame.
-titletext  - A string containing the text to display in the frame's titlebar.
-             Nil can be passed if no title is desired, but one is recommended
-
-Examples
-  ns.CreateDoublewidePanel("rawr", "Imma bear")
-  -- Creates a frame named rawr, with title "Imma bear".
-
-  ns.CreateDoublewidePanel()
-  -- Create an anonymous frame, with no title.
-
-Returns the frame.
 ]]
-function ns.CreateDoublewidePanel(name, titletext)
-	local frame = CreateFrame("Frame", name, UIParent)
+function ns.CreateDoublewidePanel()
+	local frame = CreateFrame("Frame", nil, UIParent)
 	frame:SetToplevel(true)
 	frame:SetFrameLevel(100) -- Force frame to a high level so it shows on top the first time it's displayed
 	frame:SetSize(832, 447)
@@ -53,7 +39,8 @@ function ns.CreateDoublewidePanel(name, titletext)
 	local title = frame:CreateFontString(nil, "OVERLAY")
 	title:SetFontObject(GameFontNormal)
 	title:SetPoint("TOP", 0, -18)
-	title:SetText(titletext)
+
+	function frame:SetTitle(text) title:SetText(text) end
 
 	local close = CreateFrame("Button", nil, frame, "UIPanelCloseButton")
 	close:SetPoint("TOPRIGHT", 3, -8)
