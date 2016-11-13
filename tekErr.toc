@@ -5,9 +5,11 @@
 ## Author: Tekkub Stoutwrithe
 
 externals\events.lua
+externals\ui-minimap-button.lua
+
+frames\minimap_button.lua
 
 LibStub.lua
 tekPanelAuction.lua
 TheLowDown.lua
-MinimapButton.lua
 tekErr.lua
