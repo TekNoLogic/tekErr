@@ -14,7 +14,6 @@ local function OnLoad()
 	messages:SetPoint("BOTTOMRIGHT", -15, 40)
 	messages:SetPoint("TOPLEFT", editbox, "BOTTOMLEFT")
 
-	messages:SetScript("OnShow", function() ns.SendMessage("_PANEL_OPENED") end)
 	-- f:SetScript("OnEvent", function(self, ...) self:AddMessage(string.join(", ", ...), 0.0, 1.0, 1.0) end)
 	-- f:RegisterEvent("ADDON_ACTION_FORBIDDEN")
 	-- f:RegisterEvent("ADDON_ACTION_BLOCKED")  -- We usually don't care about these, as they aren't fatal

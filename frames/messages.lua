@@ -28,6 +28,11 @@ local function OnMouseWheel(self, delta)
 end
 
 
+local function OnShow()
+	ns.SendMessage("_PANEL_OPENED")
+end
+
+
 function ns.CreateMessageFrame(parent)
 	local frame = CreateFrame("ScrollingMessageFrame", nil, parent)
 
@@ -40,6 +45,7 @@ function ns.CreateMessageFrame(parent)
 
 	frame:SetScript("OnHide", frame.ScrollToBottom)
 	frame:SetScript("OnMouseWheel", OnMouseWheel)
+	frame:SetScript("OnShow", OnShow)
 
 	ns.RegisterCallback(frame, "_ERROR_RECEIVED", OnErrorReceived)
 
