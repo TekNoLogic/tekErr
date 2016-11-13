@@ -10,11 +10,13 @@ externals\ui-minimap-button.lua
 frames\editbox.lua
 frames\messages.lua
 frames\minimap_button.lua
+frames\panel.lua
 
 services\ldb_launcher.lua
 services\slash_command.lua
 
+init.lua
+
 LibStub.lua
 tekPanelAuction.lua
 TheLowDown.lua
-tekErr.lua
