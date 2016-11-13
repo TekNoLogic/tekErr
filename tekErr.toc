@@ -5,6 +5,7 @@
 ## Author: Tekkub Stoutwrithe
 
 externals\events.lua
+externals\ui-doublewide-panel.lua
 externals\ui-minimap-button.lua
 
 frames\editbox.lua
@@ -18,5 +19,3 @@ services\scroll_reset.lua
 services\slash_command.lua
 
 init.lua
-
-tekPanelAuction.lua

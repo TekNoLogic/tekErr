@@ -1,2 +1,3 @@
 events.lua
+ui-doublewide-panel.lua
 ui-minimap-button.lua
