@@ -16,11 +16,12 @@ function ns.CreateEditbox(parent)
 	editbox:SetBackdropColor(.1,.1,.1,1)
 	editbox:SetMultiLine(true)
 	editbox:SetAutoFocus(false)
+
 	editbox:SetScript("OnTextSet", function(self)
 		if self:GetText() == "" then
-			editbox:SetPoint("BOTTOMRIGHT", parent, "TOPRIGHT", -15, -100)
+			editbox:SetHeight(25)
 		else
-			editbox:SetPoint("BOTTOMRIGHT", parent, "TOPRIGHT", -15, -325)
+			editbox:SetHeight(250)
 			editbox:SetFocus()
 			editbox:HighlightText()
 		end

@@ -9,8 +9,9 @@ local function OnLoad()
 	local panel = ns.tekPanelAuction("tekErrPanel", "tekErr")
 
 	local editbox = ns.CreateEditbox(panel)
+	editbox:SetHeight(25)
 	editbox:SetPoint("TOPLEFT", 25, -75)
-	editbox:SetPoint("BOTTOMRIGHT", panel, "TOPRIGHT", -15, -100)
+	editbox:SetPoint("RIGHT", -15, 0)
 
 	local messages = ns.CreateMessageFrame(panel)
 	messages:SetPoint("BOTTOMRIGHT", -15, 40)
