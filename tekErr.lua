@@ -77,29 +77,3 @@ panel:SetScript("OnShow", function(self)
 
 	self:SetScript("OnShow", nil)
 end)
-
-
------------------------------
---      Slash Handler      --
------------------------------
-
-SLASH_TEKERR1 = "/err"
-SLASH_TEKERR2 = "/tekerr"
-function SlashCmdList.TEKERR()
-	if panel:IsShown() then HideUIPanel(panel)
-	else ShowUIPanel(panel) end
-end
-
-
-----------------------------------------
---      Quicklaunch registration      --
-----------------------------------------
-
-local ldb = LibStub and LibStub:GetLibrary("LibDataBroker-1.1", true)
-if ldb then
-	ldb:NewDataObject("tekErr", {
-		type = "launcher",
-		icon = "Interface\\Icons\\Ability_Creature_Cursed_04",
-		OnClick = SlashCmdList.TEKERR,
-	})
-end

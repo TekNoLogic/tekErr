@@ -9,6 +9,9 @@ externals\ui-minimap-button.lua
 
 frames\minimap_button.lua
 
+services\ldb_launcher.lua
+services\slash_command.lua
+
 LibStub.lua
 tekPanelAuction.lua
 TheLowDown.lua
