@@ -43,10 +43,6 @@ function ns.CreateMessageFrame(parent)
 	frame:EnableMouseWheel(true)
 	frame:SetHyperlinksEnabled(true)
 	frame:SetScript("OnHide", frame.ScrollToBottom)
-	frame:SetScript("OnHyperlinkClick", function(self, link, text)
-		local _, _, msg = string.find(link, "tekerr:(.+)")
-		editbox:SetText(text.. "\n".. msg)
-	end)
 	frame:SetScript("OnMouseWheel", OnMouseWheel)
 
 	return frame
