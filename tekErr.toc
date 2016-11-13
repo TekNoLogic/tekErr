@@ -4,6 +4,8 @@
 ## Notes: Lua error manager
 ## Author: Tekkub Stoutwrithe
 
+externals\events.lua
+
 LibStub.lua
 tekPanelAuction.lua
 TheLowDown.lua
