@@ -5,6 +5,12 @@ local myname, ns = ...
 local LINKSTR = "|cffff4040[%s] |Htekerr:%s|h%s|h|r"
 
 
+local function OnErrorReceived(self, event, msg, stacktrace)
+	self:AddMessage(LINKSTR:format(date("%X"), stacktrace, msg))
+	if not self:IsVisible() then ns.SendMessage("_NEW_ERROR") end
+end
+
+
 local function OnMouseWheel(self, delta)
 	if delta > 0 then
 		if IsShiftKeyDown() then
@@ -29,21 +35,16 @@ function ns.CreateMessageFrame(parent)
 	frame:SetFontObject(GameFontHighlightSmall)
 	frame:SetJustifyH("LEFT")
 	frame:SetFading(false)
-	ns.RegisterScrollReset(frame)
-	ns.RegisterScrollReset = nil
-
-
-	seterrorhandler(function(msg)
-		local _, _, stacktrace = string.find(debugstack() or "", "[^\n]+\n(.*)")
-		frame:AddMessage(string.format(LINKSTR, date("%X"), stacktrace, msg))
-		if not frame:IsVisible() then ns.SendMessage("_NEW_ERROR") end
-	end)
-
-
 	frame:EnableMouseWheel(true)
 	frame:SetHyperlinksEnabled(true)
+
 	frame:SetScript("OnHide", frame.ScrollToBottom)
 	frame:SetScript("OnMouseWheel", OnMouseWheel)
+
+	ns.RegisterCallback(frame, "_ERROR_RECEIVED", OnErrorReceived)
+
+	ns.RegisterScrollReset(frame)
+	ns.RegisterScrollReset = nil
 
 	return frame
 end
