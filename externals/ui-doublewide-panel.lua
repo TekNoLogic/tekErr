@@ -36,7 +36,6 @@ function ns.CreateDoublewidePanel(name, titletext)
 	frame:SetAttribute("UIPanelLayout-enabled", true)
 	frame:SetAttribute("UIPanelLayout-area", "doublewide")
 	frame:SetAttribute("UIPanelLayout-whileDead", true)
-	-- table.insert(UISpecialFrames, name)
 
 	local portrait_frame = CreateFrame("Frame", nil, frame)
 	portrait_frame:SetSize(57, 57)
