@@ -29,7 +29,6 @@ function ns.CreateDoublewidePanel(name, titletext)
 	frame:SetSize(832, 447)
 	frame:SetPoint("TOPLEFT", 0, -104)
 	frame:EnableMouse() -- To avoid click-thru
-	-- frame:SetMovable(false)
 
 	frame:Hide()
 
