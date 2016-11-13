@@ -3,11 +3,6 @@ local myname, ns = ...
 
 
 local linkstr = "|cffff4040[%s] |Htekerr:%s|h%s|h|r"
-local lastName, butt
-
-
-local buttfunc = tekErrMinimapButton
-tekErrMinimapButton = nil
 
 
 local panel = ns.tekPanelAuction("tekErrPanel", "tekErr")
@@ -17,7 +12,7 @@ f:SetMaxLines(250)
 f:SetFontObject(GameFontHighlightSmall)
 f:SetJustifyH("LEFT")
 f:SetFading(false)
-f:SetScript("OnShow", function() if butt then butt:Hide() end end)
+f:SetScript("OnShow", function() ns.SendMessage("_PANEL_OPENED") end)
 f:SetScript("OnEvent", function(self, ...) self:AddMessage(string.join(", ", ...), 0.0, 1.0, 1.0) end)
 f:RegisterEvent("ADDON_ACTION_FORBIDDEN")
 --~ f:RegisterEvent("ADDON_ACTION_BLOCKED")  -- We usually don't care about these, as they aren't fatal
@@ -25,11 +20,13 @@ TheLowDownRegisterFrame(f)
 TheLowDownRegisterFrame = nil
 
 
+ns.RegisterCallback("_SHOW_PANEL", function() ShowUIPanel(panel) end)
+
+
 seterrorhandler(function(msg)
 	local _, _, stacktrace = string.find(debugstack() or "", "[^\n]+\n(.*)")
 	f:AddMessage(string.format(linkstr, date("%X"), stacktrace, msg))
-	if not butt then butt = buttfunc(f); buttfunc = nil end
-	if not f:IsVisible() then butt:Show() end
+	if not f:IsVisible() then ns.SendMessage("_NEW_ERROR") end
 end)
 
 
