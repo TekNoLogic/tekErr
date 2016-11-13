@@ -5,6 +5,23 @@ local myname, ns = ...
 local LINKSTR = "|cffff4040[%s] |Htekerr:%s|h%s|h|r"
 
 
+local function OnMouseWheel(self, delta)
+	if delta > 0 then
+		if IsShiftKeyDown() then
+			self:ScrollToTop()
+		else
+			self:ScrollUp()
+		end
+	elseif delta < 0 then
+		if IsShiftKeyDown() then
+			self:ScrollToBottom()
+		else
+			self:ScrollDown()
+		end
+	end
+end
+
+
 function ns.CreateMessageFrame(parent)
 	local frame = CreateFrame("ScrollingMessageFrame", nil, parent)
 
@@ -30,21 +47,7 @@ function ns.CreateMessageFrame(parent)
 		local _, _, msg = string.find(link, "tekerr:(.+)")
 		editbox:SetText(text.. "\n".. msg)
 	end)
-	frame:SetScript("OnMouseWheel", function(self, delta)
-		if delta > 0 then
-			if IsShiftKeyDown() then
-				self:ScrollToTop()
-			else
-				self:ScrollUp()
-			end
-		elseif delta < 0 then
-			if IsShiftKeyDown() then
-				self:ScrollToBottom()
-			else
-				self:ScrollDown()
-			end
-		end
-	end)
+	frame:SetScript("OnMouseWheel", OnMouseWheel)
 
 	return frame
 end
