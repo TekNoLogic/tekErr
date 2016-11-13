@@ -2,9 +2,6 @@
 local myname, ns = ...
 
 
-local linkstr = "|cffff4040[%s] |Htekerr:%s|h%s|h|r"
-
-
 local function OnLoad()
 	local panel = ns.tekPanelAuction("tekErrPanel", "tekErr")
 
@@ -20,7 +17,7 @@ local function OnLoad()
 	messages:SetScript("OnShow", function() ns.SendMessage("_PANEL_OPENED") end)
 	-- f:SetScript("OnEvent", function(self, ...) self:AddMessage(string.join(", ", ...), 0.0, 1.0, 1.0) end)
 	-- f:RegisterEvent("ADDON_ACTION_FORBIDDEN")
-	--~ f:RegisterEvent("ADDON_ACTION_BLOCKED")  -- We usually don't care about these, as they aren't fatal
+	-- f:RegisterEvent("ADDON_ACTION_BLOCKED")  -- We usually don't care about these, as they aren't fatal
 
 
 	ns.RegisterCallback(panel, "_SHOW_PANEL", ShowUIPanel)
