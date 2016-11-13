@@ -28,7 +28,7 @@ function ns.CreateDoublewidePanel(name, titletext)
 	frame:SetFrameLevel(100) -- Force frame to a high level so it shows on top the first time it's displayed
 	frame:SetSize(832, 447)
 	frame:SetPoint("TOPLEFT", 0, -104)
-	frame:EnableMouse() -- To avoid click-thru
+	frame:EnableMouse(true) -- To avoid click-thru
 
 	frame:Hide()
 
