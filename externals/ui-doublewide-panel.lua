@@ -23,6 +23,7 @@ function ns.CreateDoublewidePanel()
 	frame:SetAttribute("UIPanelLayout-area", "doublewide")
 	frame:SetAttribute("UIPanelLayout-whileDead", true)
 
+
 	local portrait_frame = CreateFrame("Frame", nil, frame)
 	portrait_frame:SetSize(57, 57)
 	portrait_frame:SetPoint("TOPLEFT", 9, -7)
@@ -36,15 +37,18 @@ function ns.CreateDoublewidePanel()
 	end)
 	portrait_frame:RegisterEvent("UNIT_PORTRAIT_UPDATE")
 
+
 	local title = frame:CreateFontString(nil, "OVERLAY")
 	title:SetFontObject(GameFontNormal)
 	title:SetPoint("TOP", 0, -18)
 
 	function frame:SetTitle(text) title:SetText(text) end
 
+
 	local close = CreateFrame("Button", nil, frame, "UIPanelCloseButton")
 	close:SetPoint("TOPRIGHT", 3, -8)
 	close:SetScript("OnClick", function() HideUIPanel(frame) end)
+
 
 	local topleft = frame:CreateTexture(nil, "ARTWORK")
 	topleft:SetSize(256, 256)
