@@ -2,7 +2,7 @@
 local myname, ns = ...
 
 
-local linkstr = "|cffff4040[%s] |Htekerr:%s|h%s|h|r"
+local LINKSTR = "|cffff4040[%s] |Htekerr:%s|h%s|h|r"
 
 
 function ns.CreateMessageFrame(parent)
@@ -18,7 +18,7 @@ function ns.CreateMessageFrame(parent)
 
 	seterrorhandler(function(msg)
 		local _, _, stacktrace = string.find(debugstack() or "", "[^\n]+\n(.*)")
-		frame:AddMessage(string.format(linkstr, date("%X"), stacktrace, msg))
+		frame:AddMessage(string.format(LINKSTR, date("%X"), stacktrace, msg))
 		if not frame:IsVisible() then ns.SendMessage("_NEW_ERROR") end
 	end)
 
