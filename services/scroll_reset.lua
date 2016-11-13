@@ -1,8 +1,8 @@
 
+local myname, ns = ...
 
 
 local frame, handlers, running = CreateFrame("Frame"), {}, {}
-frame.name = "tekErr-TheLowDown"
 frame:Hide()
 
 
@@ -40,10 +40,8 @@ local function Stop(name)
 	if not next(running) then frame:Hide() end
 end
 
--------------------
 
-
-function TheLowDownRegisterFrame(frame)
+function ns.RegisterScrollReset(frame)
 	local scrolldown = frame.ScrollDown
 	local scrollframe = frame
 
@@ -66,5 +64,3 @@ function TheLowDownRegisterFrame(frame)
 		end
 	end
 end
-
-

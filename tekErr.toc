@@ -13,10 +13,10 @@ frames\minimap_button.lua
 frames\panel.lua
 
 services\ldb_launcher.lua
+services\scroll_reset.lua
 services\slash_command.lua
 
 init.lua
 
 LibStub.lua
 tekPanelAuction.lua
-TheLowDown.lua

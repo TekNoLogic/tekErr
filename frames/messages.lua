@@ -12,8 +12,8 @@ function ns.CreateMessageFrame(parent)
 	frame:SetFontObject(GameFontHighlightSmall)
 	frame:SetJustifyH("LEFT")
 	frame:SetFading(false)
-	TheLowDownRegisterFrame(frame)
-	TheLowDownRegisterFrame = nil
+	ns.RegisterScrollReset(frame)
+	ns.RegisterScrollReset = nil
 
 
 	seterrorhandler(function(msg)
