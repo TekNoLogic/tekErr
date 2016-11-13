@@ -8,6 +8,7 @@ externals\events.lua
 externals\ui-minimap-button.lua
 
 frames\editbox.lua
+frames\messages.lua
 frames\minimap_button.lua
 
 services\ldb_launcher.lua

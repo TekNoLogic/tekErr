@@ -4,8 +4,7 @@ local myname, ns = ...
 
 function ns.CreateEditbox(parent)
 	local editbox = CreateFrame("EditBox", nil, parent)
-	editbox:SetPoint("TOPLEFT", 25, -75)
-	editbox:SetPoint("BOTTOMRIGHT", parent, "TOPRIGHT", -15, -100)
+
 	editbox:SetFontObject(GameFontHighlightSmall)
 	editbox:SetTextInsets(8,8,8,8)
 	editbox:SetBackdrop{
