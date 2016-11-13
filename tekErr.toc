@@ -19,5 +19,4 @@ services\slash_command.lua
 
 init.lua
 
-LibStub.lua
 tekPanelAuction.lua
