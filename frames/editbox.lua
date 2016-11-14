@@ -2,13 +2,13 @@
 local myname, ns = ...
 
 
-local function OnEditFocusLost(self)
-	self:SetText("")
+local function OnDisplayError(self, event, message)
+	self:SetText(message)
 end
 
 
-local function OnHyperlinkClicked(self, event, message)
-	self:SetText(message)
+local function OnEditFocusLost(self)
+	self:SetText("")
 end
 
 
@@ -42,7 +42,7 @@ function ns.CreateEditbox(parent)
 	editbox:SetScript("OnEditFocusLost", OnEditFocusLost)
 	editbox:SetScript("OnEscapePressed", editbox.ClearFocus)
 
-	ns.RegisterCallback(editbox, "_HYPERLINK_CLICKED", OnHyperlinkClicked)
+	ns.RegisterCallback(editbox, "_DISPLAY_ERROR", OnDisplayError)
 
 	return editbox
 end

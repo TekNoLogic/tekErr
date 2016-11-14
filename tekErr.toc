@@ -14,6 +14,7 @@ frames\minimap_button.lua
 frames\panel.lua
 
 services\error_handler.lua
+services\error_storage.lua
 services\ldb_launcher.lua
 services\scroll_reset.lua
 services\slash_command.lua
