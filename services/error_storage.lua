@@ -20,7 +20,7 @@ local function OnErrorReceived(self, event, msg, stacktrace, debuglocals)
 
 	if index == LIMIT then
 		ns.SendMessage("_NEW_MESSAGE", "|cffff4040 ERROR LIMIT REACHED|r")
-		ns.RegisterCallback(self, "_ERROR_RECEIVED")
+		ns.UnregisterCallback(self, "_ERROR_RECEIVED")
 	end
 
 	index = index + 1
