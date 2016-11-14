@@ -3,6 +3,5 @@ local myname, ns = ...
 
 
 seterrorhandler(function(msg)
-	local _, _, stacktrace = string.find(debugstack() or "", "[^\n]+\n(.*)")
-	ns.SendMessage("_ERROR_RECEIVED", msg, stacktrace)
+	ns.SendMessage("_ERROR_RECEIVED", msg, debugstack(4), debuglocals(4))
 end)
