@@ -32,6 +32,11 @@ local function OnShow()
 	ns.SendMessage("_PANEL_OPENED")
 end
 
+local function OnHyperlinkClick(self, link, text)
+	local _, _, msg = string.find(link, "tekerr:(.+)")
+	ns.SendMessage("_HYPERLINK_CLICKED", text.. "\n".. msg)
+end
+
 
 function ns.CreateMessageFrame(parent)
 	local frame = CreateFrame("ScrollingMessageFrame", nil, parent)
@@ -44,6 +49,7 @@ function ns.CreateMessageFrame(parent)
 	frame:SetHyperlinksEnabled(true)
 
 	frame:SetScript("OnHide", frame.ScrollToBottom)
+	frame:SetScript("OnHyperlinkClick", OnHyperlinkClick)
 	frame:SetScript("OnMouseWheel", OnMouseWheel)
 	frame:SetScript("OnShow", OnShow)
 

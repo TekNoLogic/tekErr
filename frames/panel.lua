@@ -21,12 +21,6 @@ local function OnLoad()
 
 
 	ns.RegisterCallback(panel, "_SHOW_PANEL", ShowUIPanel)
-
-
-	messages:SetScript("OnHyperlinkClick", function(self, link, text)
-		local _, _, msg = string.find(link, "tekerr:(.+)")
-		editbox:SetText(text.. "\n".. msg)
-	end)
 end
 
 

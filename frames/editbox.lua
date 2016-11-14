@@ -2,6 +2,27 @@
 local myname, ns = ...
 
 
+local function OnEditFocusLost(self)
+	self:SetText("")
+end
+
+
+local function OnHyperlinkClicked(self, event, message)
+	self:SetText(message)
+end
+
+
+local function OnTextSet(self)
+	if self:GetText() == "" then
+		self:SetHeight(25)
+	else
+		self:SetHeight(250)
+		self:SetFocus()
+		self:HighlightText()
+	end
+end
+
+
 function ns.CreateEditbox(parent)
 	local editbox = CreateFrame("EditBox", nil, parent)
 
@@ -17,17 +38,11 @@ function ns.CreateEditbox(parent)
 	editbox:SetMultiLine(true)
 	editbox:SetAutoFocus(false)
 
-	editbox:SetScript("OnTextSet", function(self)
-		if self:GetText() == "" then
-			editbox:SetHeight(25)
-		else
-			editbox:SetHeight(250)
-			editbox:SetFocus()
-			editbox:HighlightText()
-		end
-	end)
+	editbox:SetScript("OnTextSet", OnTextSet)
+	editbox:SetScript("OnEditFocusLost", OnEditFocusLost)
 	editbox:SetScript("OnEscapePressed", editbox.ClearFocus)
-	editbox:SetScript("OnEditFocusLost", function(editbox) editbox:SetText("") end)
+
+	ns.RegisterCallback(editbox, "_HYPERLINK_CLICKED", OnHyperlinkClicked)
 
 	return editbox
 end
