@@ -30,5 +30,5 @@ end)
 frame:Hide()
 
 
-ns.RegisterCallback(frame, "_NEW_ERROR", frame.Show)
+ns.RegisterCallback(frame, "_NEW_MESSAGE", frame.Show)
 ns.RegisterCallback(frame, "_PANEL_OPENED", frame.Hide)
