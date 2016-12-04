@@ -1,3 +1,9 @@
+### 7.1.0.5-Beta
+
+* fix clicking on error links
+* add more error metadata, like locals and stuff
+
+
 ### 7.1.0.4-Release
 
 * Tagging release version
