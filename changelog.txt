@@ -1,3 +1,8 @@
+### 7.1.0.6-Beta
+
+* bump for wowace packager
+
+
 ### 7.1.0.5-Beta
 
 * add more error metadata, like locals and stuff
