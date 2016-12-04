@@ -1,3 +1,4 @@
+enable-nolib-creation: no
 manual-changelog:
     filename: changelog.txt
     markup-type: markdown
